@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=raleway:wght@100;300;400;500;600;700&display=swap");
+
+* {
+  font-family: "raleway", sans-serif;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+
+
+body {
+  background-image: linear-gradient(to top, #145DA0, #0C2D48);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.containerCard {
+  position: relative;
+  margin: 5% 20% 0% 20%;
+  justify-content: center;
+}
+
+.card {
+  background-color: #ffffff74;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px 2px #888888;
+  padding: 2%;
+}
+
