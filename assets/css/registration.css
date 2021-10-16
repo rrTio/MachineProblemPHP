@@ -5,10 +5,10 @@ h3 {
   font-weight: 600;
 }
 h4 {
-    text-align: left;
-    font-size: large;
-    color: #212121;
-    margin:0;
+  text-align: left;
+  font-size: large;
+  color: #212121;
+  margin: 0;
 }
 
 input::-webkit-outer-spin-button,
@@ -17,9 +17,8 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
-.spaces
-{
-    margin-top: 2px;
+.spaces {
+  margin-top: 2px;
 }
 
 .input,
@@ -27,7 +26,10 @@ input[type="email"],
 input[type="password"],
 input[type="text"],
 input[type="number"],
-.yrLevel, #sNumber {
+.program,
+.yrLevel,
+#gender,
+#sNumber {
   background-color: #ffffff81;
   border: 1px solid #796d6d;
   margin-bottom: 15px;
@@ -60,7 +62,6 @@ input[type="radio"] {
   transition: all 0.3s ease;
   position: relative;
   display: inline-block;
-  
 }
 
 .btn-10 {
@@ -103,13 +104,13 @@ input[type="radio"] {
   margin-top: 4%;
 }
 
-
-.birthdate{
+.birthdate, .gender {
   display: flex;
-  
 }
 
-#month, #day, #year{
+#month,
+#day,
+#year, #gender {
   border-radius: 5px;
   margin: 0px 5px 0px 5px;
   background-color: #ffffff81;
