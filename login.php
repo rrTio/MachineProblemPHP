@@ -17,7 +17,7 @@
         <div class="container">
             <h4>Welcome!</h4>
             <p>Please enter your details</p>
-            <form>
+            <form action='checklogin.php' method="POST">
                 <div class="row">
                     <div class="col-md-12 col-12-mobile">
                         <input pattern="\d*" maxlength="11" id="sNumber" name="sNumber" placeholder="Student Number">
