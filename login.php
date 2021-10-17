@@ -20,7 +20,7 @@
             <form>
                 <div class="row">
                     <div class="col-md-12 col-12-mobile">
-                        <input type='text' id="sNumber" name="sNumber" placeholder="Student Number">
+                        <input pattern="\d*" maxlength="11" id="sNumber" name="sNumber" placeholder="Student Number">
                     </div>
                 </div>
                 <div class="row">
