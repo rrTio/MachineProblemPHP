@@ -16,10 +16,15 @@
     $gender = $_POST['gender'];
     $birthdate = $month."-".$day."-".$year;
     
+    if($password == ""){
+        $surname = strtolower($lastName);
+        $newPassword = $month.$day.$year.$surname;
+        $password = $newPassword;
+    }
+    
     $sql = "INSERT INTO student_info (user_firstName, user_lastName, user_studentNumber, user_yearLevel, user_email,
-    user_password,
-    user_program, user_contact, user_birthdate, user_gender) VALUES ('$firstName','$lastName','$studentNumber','$yrLevel','$email','$password','$program','$contactNumber','$birthdate','$gender');";
+    user_password, user_program, user_contact, user_birthdate, user_gender) VALUES ('$firstName','$lastName','$studentNumber','$yrLevel','$email','$password','$program','$contactNumber','$birthdate','$gender');";
     mysqli_query($conn, $sql);
 
-    header("Location: ../Database%20MP/login.php");
+    header("Location: ../Database%20MP/login.php?registration=success");
 ?>

@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Registration</title>
+    <title>Your Profile</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
@@ -15,17 +15,17 @@
 <body>
     <div class="containerCard">
         <div class="card">
-            <h3>SIGN UP</h3>
-            <p style="text-align: center">It's quick and easy</p>
+            <h3>Welcome!</h3>
+            <p style="text-align: center">View your profile</p>
             <div class="container mt-3">
-                <form action="register.php" method="POST">
+                <form>
                     <div class="row">
                         <div class="col-md-6 col-12-mobile">
-                            <input type="text" id="firstName" pattern="[A-Za-z0-9]+" name="firstName"
+                            <input type="text" id="fName" pattern="[A-Za-z0-9]+" name="firstName"
                                 placeholder="First Name">
                         </div>
                         <div class="col-md-6 col-12-mobile">
-                            <input type="text" id="lastName" pattern="[A-Za-z0-9]+" name="lastName"
+                            <input type="text" id="lName" pattern="[A-Za-z0-9]+" name="lastName"
                                 placeholder="Last Name">
                         </div>
                     </div>
@@ -55,15 +55,14 @@
                     </div>
                     <div class="row">
                         <div class="col-md-6 col-12-mobile">
-                            <select class="program" id="program" name="program">
+                            <select class="yrLevel" id="yrLevel" name="yrLevel">
                                 <option selected disabled>PROGRAM</option>
-                                <option value="1">CENGG</option>
-                                <option value="2">CCSS</option>
+                                <option value="CENGG">CENGG</option>
+                                <option value="CCSS">CCSS</option>
                             </select>
                         </div>
                         <div class="col-md-6 col-12-mobile">
-                            <input pattern=" \d" maxlength="11" id="contactNumber" name="contactNumber"
-                                placeholder="Contact Number">
+                            <input type="number" id="contactNumber" name="contactNumber" placeholder="Contact Number">
                         </div>
                     </div>
                     <div class="row align-items-center g-3">
@@ -146,19 +145,25 @@
                                 <option value="2003">2003</option>
                             </select>
                         </div>
-                        <div class="gender col-lg-6 col-md-auto col-12-mobile">
+                        <div class="col-lg-6  col-md-auto col-12-mobile">
                             <h4>Gender: </h4>
-                            <select id="gender" name="gender">
-                                <option selected disabled>CHOOSE GENDER</option>
-                                <option value="Male">MALE</option>
-                                <option value="Female">FEMALE</option>
-                                <option value="Unavailable">PREFER NOT TO SAY</option>
-                            </select>
+                            <div class="spaces form-check form-check-inline">
+                                <input type="radio" class="form-check-input" name="gender" id="radioMale" required>
+                                <label class="form-check-label" for="radioMale">Male</label>
+                            </div>
+                            <div class="spaces form-check form-check-inline ms-3">
+                                <input type="radio" class="form-check-input" name="gender" id="radioFemale" required>
+                                <label class="form-check-label" for="radioFemale">Female</label>
+                            </div>
+                            <div class="spaces form-check form-check-inline ms-3">
+                                <input type="radio" class="form-check-input" name="gender" id="radioFemale" required>
+                                <label class="form-check-label" for="radioFemale">Prefer not to mention</label>
+                            </div>
                         </div>
                     </div>
                     <center>
-                        <div class=" col-md-6 col-12-mobile buttonRegister">
-                            <button type="submit" name="submit" class=" custom-btn btn-10">Register</button>
+                        <div class="col-md-6 col-12-mobile buttonRegister">
+                            <button type="submit" class="custom-btn btn-10">Save Changes</button>
                         </div>
                     </center>
                 </form>
