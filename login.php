@@ -19,7 +19,7 @@
         <div class="container">
             <h4>Welcome!</h4>
             <p>Please enter your details</p>
-            <form action='configurations/checklogin.php' method="POST">
+            <form action='configurations/checklogin.php' method="POST" name="loginForm">
                 <div class="row">
                     <div class="col-md-12 col-12-mobile">
                         <input pattern="\d*" maxlength="11" id="sNumber" name="sNumber" placeholder="Student Number">
@@ -36,9 +36,7 @@
                 </center>
             </form>
         </div>
-        <a id="forgotPassword" onclick=" forgotPassword()">
-            Forgot password?
-        </a>
+        <a id="forgotPassword" onClick="forgotPassword();"> Forgot password? </a>
         <center>
             <button type=" submit" onClick='openlink()' class="custom-btn btn-10 btnCreate" id="newAccount">Create
                 new

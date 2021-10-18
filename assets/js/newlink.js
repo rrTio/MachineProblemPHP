@@ -5,3 +5,4 @@ function openlink() {
 function forgotPassword() {
   window.location.href = "../Database MP/forgotpassword.php";
 }
+
