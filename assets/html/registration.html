@@ -31,7 +31,7 @@
                     </div>
                     <div class="row">
                         <div class="col-md-6 col-12-mobile">
-                            <input type="number" pattern="\d*" maxlength="11" id="sNumber" name="sNumber"
+                            <input pattern="\d*" maxlength="11" id="sNumber" name="sNumber"
                                 placeholder="Student Number">
                         </div>
                         <div class="col-md-6 col-12-mobile">
@@ -62,8 +62,8 @@
                             </select>
                         </div>
                         <div class="col-md-6 col-12-mobile">
-                            <input type="number" pattern=" \d" maxlength="11" id="contactNumber" name="contactNumber"
-                                placeholder="Contact Number">
+                            <input pattern="\d*" class="contactNumber" maxlength=" 11" id="contactNumber"
+                                name="contactNumber" placeholder="Contact Number">
                         </div>
                     </div>
                     <div class="row align-items-center g-3">
@@ -150,9 +150,9 @@
                             <h4>Gender: </h4>
                             <select id="gender" name="gender">
                                 <option selected disabled>CHOOSE GENDER</option>
-                                <option value="1">MALE</option>
-                                <option value="2">FEMALE</option>
-                                <option value="3">PREFER NOT TO SAY</option>
+                                <option value="Male">MALE</option>
+                                <option value="Female">FEMALE</option>
+                                <option value="Unavailable">PREFER NOT TO SAY</option>
                             </select>
                         </div>
                     </div>

@@ -9,14 +9,14 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="assets/css/main.css" />
-    <link rel="stylesheet" href="assets/css/registration.css" />
+    <link rel="stylesheet" href="assets/css/landing.css" />
 </head>
 
 <body>
     <div class="containerCard">
         <div class="card">
             <h3>Welcome!</h3>
-            <p style="text-align: center">View your profile</p>
+            <p style="text-align: center">This is your profile and you may edit it</p>
             <div class="container mt-3">
                 <form>
                     <div class="row">

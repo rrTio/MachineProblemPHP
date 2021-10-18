@@ -26,6 +26,7 @@ input[type="email"],
 input[type="password"],
 input[type="text"],
 input[type="number"],
+.contactNumber,
 .program,
 .yrLevel,
 #gender,
@@ -40,6 +41,16 @@ input[type="number"],
 input[type="radio"] {
   margin-top: -1px;
   vertical-align: middle;
+}
+
+#month,
+#day,
+#year,
+#gender {
+  border-radius: 5px;
+  margin: 0px 5px 0px 5px;
+  background-color: #ffffff81;
+  border: 1px solid #796d6d;
 }
 
 @media screen and (max-width: 767px) {
@@ -104,15 +115,7 @@ input[type="radio"] {
   margin-top: 4%;
 }
 
-.birthdate, .gender {
+.birthdate,
+.gender {
   display: flex;
-}
-
-#month,
-#day,
-#year, #gender {
-  border-radius: 5px;
-  margin: 0px 5px 0px 5px;
-  background-color: #ffffff81;
-  border: 1px solid #796d6d;
 }

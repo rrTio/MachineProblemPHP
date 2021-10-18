@@ -9,7 +9,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="assets/css/main.css" />
-    <link rel="stylesheet" href="assets/css/login.css" />
+    <link rel="stylesheet" href="assets/css/forgotPassword.css" />
     <script src='assets/js/newlink.js'>
     </script>
 </head>
@@ -17,8 +17,8 @@
 <body>
     <center>
         <div class="container">
-            <h4>Welcome!</h4>
-            <p>Please enter your details</p>
+            <h4>Forgot your password?</h4>
+            <p>You can change it here</p>
             <form action='configurations/checklogin.php' method="POST">
                 <div class="row">
                     <div class="col-md-12 col-12-mobile">
@@ -29,20 +29,21 @@
                     <div class="col-md-12 col-12-mobile">
                         <input type="password" id="password" name="password" placeholder="Password">
                     </div>
+                    <div class="col-md-12 col-12-mobile">
+                        <input type="password" id="confirmPassword" name="confirmPassword"
+                            placeholder="Confirm Password">
+                    </div>
                 </div>
 
                 <center>
-                    <button type="submit" class="custom-btn btn-10 ">Sign in</button>
+                    <button type="submit" class="custom-btn btn-10 ">Change Password</button>
                 </center>
             </form>
         </div>
-        <a id="forgotPassword" onclick=" forgotPassword()">
-            Forgot password?
-        </a>
         <center>
-            <button type=" submit" onClick='openlink()' class="custom-btn btn-10 btnCreate" id="newAccount">Create
-                new
-                account</button>
+            <button type="submit" onClick='openlink()' class="custom-btn btn-10 btnCreate" id="newAccount">Create New
+                Account
+            </button>
         </center>
     </center>
 </body>

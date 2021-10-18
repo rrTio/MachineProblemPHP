@@ -18,7 +18,7 @@
             <h3>SIGN UP</h3>
             <p style="text-align: center">It's quick and easy</p>
             <div class="container mt-3">
-                <form action="register.php" method="POST">
+                <form action="configurations/checkregister.php" method="POST">
                     <div class="row">
                         <div class="col-md-6 col-12-mobile">
                             <input type="text" id="firstName" pattern="[A-Za-z0-9]+" name="firstName"
@@ -37,11 +37,11 @@
                         <div class="col-md-6 col-12-mobile">
                             <select class="yrLevel" id="yrLevel" name="yrLevel">
                                 <option selected disabled>YEAR LEVEL</option>
-                                <option value="1">1st YEAR</option>
-                                <option value="2">2nd YEAR</option>
-                                <option value="3">3rd YEAR</option>
-                                <option value="4">4th YEAR</option>
-                                <option value="5">5th YEAR</option>
+                                <option value="1st Year">1st YEAR</option>
+                                <option value="2nd Year">2nd YEAR</option>
+                                <option value="3rd Year">3rd YEAR</option>
+                                <option value="4th Year">4th YEAR</option>
+                                <option value="5th Year">5th YEAR</option>
                             </select>
                         </div>
                     </div>
@@ -57,13 +57,13 @@
                         <div class="col-md-6 col-12-mobile">
                             <select class="program" id="program" name="program">
                                 <option selected disabled>PROGRAM</option>
-                                <option value="1">CENGG</option>
-                                <option value="2">CCSS</option>
+                                <option value="CENGG">CENGG</option>
+                                <option value="CCSS">CCSS</option>
                             </select>
                         </div>
                         <div class="col-md-6 col-12-mobile">
-                            <input pattern=" \d" maxlength="11" id="contactNumber" name="contactNumber"
-                                placeholder="Contact Number">
+                            <input pattern="\d*" class="contactNumber" maxlength=" 11" id="contactNumber"
+                                name="contactNumber" placeholder="Contact Number">
                         </div>
                     </div>
                     <div class="row align-items-center g-3">

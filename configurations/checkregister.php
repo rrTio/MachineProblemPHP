@@ -1,5 +1,5 @@
 <?php
-    include_once 'config.php';
+    include_once 'configurations/config.php';
             
     $firstName = $_POST['firstName'];
     $lastName = $_POST['lastName'];
