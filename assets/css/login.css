@@ -13,12 +13,12 @@ h3 {
   color: black;
 }
 
-h4{
+h4 {
   font-weight: 600;
   color: black;
 }
 
-input{
+input {
   background-color: #ffffff81;
   border: 1px solid #796d6d;
   margin-bottom: 15px;
@@ -40,20 +40,20 @@ input{
   display: inline-block;
 }
 
+.btnCreate {
+  margin-top: 1%;
+}
+
 .btn-10 {
   border-radius: 20px;
   border: none;
   box-shadow: 0 0 5px #000000;
   font-weight: 600;
   color: #000;
-  background: linear-gradient(to bottom, rgb(7, 248, 99), rgb(0, 140, 255));
+  background-color: #189ab4;
   z-index: 2;
   transition: all 0.3s ease;
   overflow: hidden;
-}
-
-.btnCreate{
-  margin-top: 1%;
 }
 
 .btn-10:after {
@@ -65,7 +65,7 @@ input{
   z-index: -1;
   width: 100%;
   height: 100%;
-  background-image: linear-gradient(to top, rgb(7, 248, 99), rgb(0, 140, 255));
+  background-color: #21b6a8;
   color: #000000;
   transition: all 0.3s ease;
   -webkit-transform: scale(0);
@@ -80,11 +80,47 @@ input{
   transform: scale(1);
 }
 
-#forgotPassword{
-  color:#ffffff;
+.btnCreate {
+  border-radius: 20px;
+  border: none;
+  box-shadow: 0 0 5px #000000;
+  font-weight: 600;
+  color: #000;
+  background-color: #18a558;
+  z-index: 2;
+  transition: all 0.3s ease;
+  overflow: hidden;
 }
 
-#forgotPassword:hover{
-  color:white;
+.btnCreate:after {
+  border-radius: 20px;
+  position: absolute;
+  content: " ";
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background-color: #76b947;
+  color: #000000;
+  transition: all 0.3s ease;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+}
+.btnCreatehover {
+  border: none;
+  color: #000;
+}
+.btnCreate:hover:after {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+
+#forgotPassword {
+  color: #ffffff;
+}
+
+#forgotPassword:hover {
+  color: white;
   font-weight: 600;
 }

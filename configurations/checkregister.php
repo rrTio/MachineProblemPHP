@@ -26,5 +26,5 @@
     user_password, user_program, user_contact, user_birthdate, user_gender) VALUES ('$firstName','$lastName','$studentNumber','$yrLevel','$email','$password','$program','$contactNumber','$birthdate','$gender');";
     mysqli_query($conn, $sql);
 
-    header("Location: ../Database%20MP/login.php?registration=success");
+    header("Location: ../Database%20MP/index.php?registration=success");
 ?>

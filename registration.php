@@ -46,11 +46,8 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-6 col-12-mobile">
+                        <div class="col-md-12 col-12-mobile">
                             <input type="email" id="email" name="email" placeholder="Email">
-                        </div>
-                        <div class="col-md-6 col-12-mobile">
-                            <input type="password" id="password" name="password" placeholder="Password">
                         </div>
                     </div>
                     <div class="row">
