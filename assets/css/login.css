@@ -44,7 +44,7 @@ input {
   margin-top: 1%;
 }
 
-.btn-10 {
+.btnLogin {
   border-radius: 20px;
   border: none;
   box-shadow: 0 0 5px #000000;
@@ -56,7 +56,7 @@ input {
   overflow: hidden;
 }
 
-.btn-10:after {
+.btnLogin:after {
   border-radius: 20px;
   position: absolute;
   content: " ";
@@ -71,11 +71,11 @@ input {
   -webkit-transform: scale(0);
   transform: scale(0);
 }
-.btn-10:hover {
+.btnLogin:hover {
   border: none;
   color: #000;
 }
-.btn-10:hover:after {
+.btnLogin:hover:after {
   -webkit-transform: scale(1);
   transform: scale(1);
 }
