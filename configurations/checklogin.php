@@ -9,6 +9,7 @@
 
         if($returned > 0){
             $setSNumber = $studentNumber;
+            $setPassword = $password;
             mysqli_query($conn, $sql);
             header("Location: ../landing.php?login=success");
         }
