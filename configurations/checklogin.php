@@ -8,8 +8,13 @@
         $returned = mysqli_fetch_array($sql);
 
         if($returned > 0){
+            $setSNumber = $studentNumber;
             mysqli_query($conn, $sql);
             header("Location: ../landing.php?login=success");
+        }
+
+        if($returned == 0){
+            echo '<script> alert("ERROR LOGIN"); </script>';
         }
     }
 ?>
