@@ -10,6 +10,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="assets/css/main.css" />
     <link rel="stylesheet" href="assets/css/landing.css" />
+    <script src='./assets/js/validation.js'></script>
 </head>
 
 <body>
@@ -18,22 +19,32 @@
             <h3>Welcome!</h3>
             <p style="text-align: center">This is your profile and you may edit it</p>
             <div class="container mt-3">
-                <form>
+                <form name="landingForm">
                     <div class="row">
                         <div class="col-md-6 col-12-mobile">
-                            <input type="text" id="fName" pattern="[A-Za-z0-9]+" name="firstName"
+                            <input disabled type="text" id="fName" pattern="[A-Za-z0-9]+" name="firstName"
                                 placeholder="First Name">
                         </div>
                         <div class="col-md-6 col-12-mobile">
-                            <input type="text" id="lName" pattern="[A-Za-z0-9]+" name="lastName"
+                            <input disabled type="text" id="lName" pattern="[A-Za-z0-9]+" name="lastName"
                                 placeholder="Last Name">
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-6 col-12-mobile">
-                            <input pattern="\d*" maxlength="11" id="sNumber" name="sNumber"
+                            <input disabled type="number" pattern="/^-?\d+\.?\d*$/" class="contactNumber" onKeyPress="if(this.value.length==11) return false;" id="sNumber" name="sNumber"
                                 placeholder="Student Number">
                         </div>
+                        <div class="col-md-6 col-12-mobile">
+                            <input type="number" pattern="/^-?\d+\.?\d*$/" class="contactNumber" onKeyPress="if(this.value.length==11) return false;" id="contactNumber" name="contactNumber" placeholder="Contact Number">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 col-12-mobile">
+                            <input type="email" id="email" name="email" placeholder="Email">
+                        </div>
+                    </div>
+                    <div class="row">
                         <div class="col-md-6 col-12-mobile">
                             <select class="yrLevel" id="yrLevel" name="yrLevel">
                                 <option selected disabled>YEAR LEVEL</option>
@@ -44,30 +55,18 @@
                                 <option value="5">5th YEAR</option>
                             </select>
                         </div>
-                    </div>
-                    <div class="row">
+
                         <div class="col-md-6 col-12-mobile">
-                            <input type="email" id="email" name="email" placeholder="Email">
-                        </div>
-                        <div class="col-md-6 col-12-mobile">
-                            <input type="password" id="password" name="password" placeholder="Password">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6 col-12-mobile">
-                            <select class="yrLevel" id="yrLevel" name="yrLevel">
+                            <select class="program" id="program" name="program">
                                 <option selected disabled>PROGRAM</option>
                                 <option value="CENGG">CENGG</option>
                                 <option value="CCSS">CCSS</option>
                             </select>
                         </div>
-                        <div class="col-md-6 col-12-mobile">
-                            <input type="number" id="contactNumber" name="contactNumber" placeholder="Contact Number">
-                        </div>
                     </div>
                     <div class="row align-items-center g-3">
                         <div class="birthdate col-lg-6 col-12-mobile">
-                            <h4>Birthdate: &nbsp;</h4>
+                            <h4 id="birthdate">Birthdate: &nbsp;</h4>
                             <select id="month" name="month">
                                 <option selected disabled>MONTH</option>
                                 <option value="01">January</option>
@@ -145,20 +144,13 @@
                                 <option value="2003">2003</option>
                             </select>
                         </div>
-                        <div class="col-lg-6  col-md-auto col-12-mobile">
-                            <h4>Gender: </h4>
-                            <div class="spaces form-check form-check-inline">
-                                <input type="radio" class="form-check-input" name="gender" id="radioMale" required>
-                                <label class="form-check-label" for="radioMale">Male</label>
-                            </div>
-                            <div class="spaces form-check form-check-inline ms-3">
-                                <input type="radio" class="form-check-input" name="gender" id="radioFemale" required>
-                                <label class="form-check-label" for="radioFemale">Female</label>
-                            </div>
-                            <div class="spaces form-check form-check-inline ms-3">
-                                <input type="radio" class="form-check-input" name="gender" id="radioFemale" required>
-                                <label class="form-check-label" for="radioFemale">Prefer not to mention</label>
-                            </div>
+                        <div class="gender col-lg-6 col-md-auto col-12-mobile">
+                            <select id="gender" name="gender">
+                                <option selected disabled>CHOOSE GENDER</option>
+                                <option value="Male">MALE</option>
+                                <option value="Female">FEMALE</option>
+                                <option value="Unavailable">PREFER NOT TO SAY</option>
+                            </select>
                         </div>
                     </div>
                     <center>

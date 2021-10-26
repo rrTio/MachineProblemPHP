@@ -43,14 +43,19 @@ input[type="radio"] {
   vertical-align: middle;
 }
 
+#birthdate{
+  margin: -8px 5px 0px 5px;
+  height: 32px;
+}
+
 #month,
 #day,
-#year,
-#gender {
-  border-radius: 5px;
-  margin: 0px 5px 0px 5px;
+#year
+{
+  margin: -12px 5px 0px 5px;
   background-color: #ffffff81;
   border: 1px solid #796d6d;
+  height: 32px;
 }
 
 @media screen and (max-width: 767px) {
@@ -64,7 +69,7 @@ input[type="radio"] {
 
 .custom-btn {
   color: #fff;
-  width: 130px;
+  width: 100%;
   height: 40px;
   padding: 10px 25px;
   font-weight: 500;

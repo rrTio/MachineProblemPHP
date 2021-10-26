@@ -1,4 +1,7 @@
-function checkValidity() {
+
+function checkValidation() {
+  alert("HELLO");
+
   var username = document.forms["loginForm"]["sNumber"];
   var password = document.forms["loginForm"]["password"];
 
@@ -8,10 +11,10 @@ function checkValidity() {
     return false;
   }
 
-  if (password.value == "") { 
+  if (password.value == "") {
     window.alert("Please enter valid password");
-    password.focus()
+    password.focus();
     return false;
   }
-    return true;
+  return true;
 }

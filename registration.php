@@ -31,9 +31,21 @@
                     </div>
                     <div class="row">
                         <div class="col-md-6 col-12-mobile">
-                            <input pattern="\d*" maxlength="11" id="sNumber" name="sNumber"
+                            <input type="number" pattern="/^-?\d+\.?\d*$/" class="contactNumber" onKeyPress="if(this.value.length==11) return false;" id="sNumber" name="sNumber"
                                 placeholder="Student Number">
                         </div>
+
+                        <div class="col-md-6 col-12-mobile">
+                            <input type="number" pattern="/^-?\d+\.?\d*$/" class="contactNumber" onKeyPress="if(this.value.length==11) return false;" id="contactNumber"
+                                name="contactNumber" placeholder="Contact Number">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 col-12-mobile">
+                            <input type="email" id="email" name="email" placeholder="Email">
+                        </div>
+                    </div>
+                    <div class="row">
                         <div class="col-md-6 col-12-mobile">
                             <select class="yrLevel" id="yrLevel" name="yrLevel">
                                 <option selected disabled>YEAR LEVEL</option>
@@ -44,13 +56,6 @@
                                 <option value="5th Year">5th YEAR</option>
                             </select>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12 col-12-mobile">
-                            <input type="email" id="email" name="email" placeholder="Email">
-                        </div>
-                    </div>
-                    <div class="row">
                         <div class="col-md-6 col-12-mobile">
                             <select class="program" id="program" name="program">
                                 <option selected disabled>PROGRAM</option>
@@ -58,14 +63,10 @@
                                 <option value="CCSS">CCSS</option>
                             </select>
                         </div>
-                        <div class="col-md-6 col-12-mobile">
-                            <input pattern="\d*" class="contactNumber" maxlength=" 11" id="contactNumber"
-                                name="contactNumber" placeholder="Contact Number">
-                        </div>
                     </div>
                     <div class="row align-items-center g-3">
                         <div class="birthdate col-lg-6 col-12-mobile">
-                            <h4>Birthdate: &nbsp;</h4>
+                            <h4 id="birthdate">Birthdate: &nbsp;</h4>
                             <select id="month" name="month">
                                 <option selected disabled>MONTH</option>
                                 <option value="01">January</option>
@@ -144,7 +145,6 @@
                             </select>
                         </div>
                         <div class="gender col-lg-6 col-md-auto col-12-mobile">
-                            <h4>Gender: </h4>
                             <select id="gender" name="gender">
                                 <option selected disabled>CHOOSE GENDER</option>
                                 <option value="Male">MALE</option>

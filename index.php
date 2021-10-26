@@ -21,19 +21,19 @@
         <div class=" container">
             <h4>Welcome!</h4>
             <p>Please enter your details</p>
-            <form onsubmit="return checkValidity()" action="./configurations/checklogin.php" method="POST" name="loginForm">
+            <form onSubmit="return checkValidation()" action="../configurations/checklogin.php" method="POST" name="loginForm">
                 <div class="row">
                     <div class="col-md-12 col-12-mobile">
-                        <input pattern="\d*" maxlength="11" id="sNumber" name="sNumber" placeholder="Student Number" required>
+                        <input pattern="\d*" maxlength="11" id="sNumber" name="sNumber" placeholder="Student Number">
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-12 col-12-mobile">
-                        <input type="password" id="password" name="password" placeholder="Password" required>
+                        <input type="password" id="password" name="password" placeholder="Password">
                     </div>
                 </div>
                 <center>
-                    <button type="submit" class="custom-btn btnLogin">Sign in</button>
+                    <button name="btnLogin" type="submit" class="custom-btn btnLogin">Sign in</button>
                 </center>
             </form>
         </div>
