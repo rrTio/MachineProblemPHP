@@ -1,3 +1,20 @@
+<?php
+    include_once('./configurations/config.php');
+
+    if(isset($_POST['btnLogin'])){
+        $studentNumber = $_POST['sNumber'];
+        $password = $_POST['password'];
+        $sql = mysqli_query($conn, "SELECT * FROM student_info WHERE user_studentNumber = '$studentNumber' AND user_password = '$password'");
+        $returned = mysqli_fetch_array($sql);
+
+        if($returned > 0){
+            echo "record found";
+        }
+        echo "no record found";
+    }
+?>
+
+
 <!DOCTYPE html>
 <html>
 
@@ -19,15 +36,29 @@
             <h3>Welcome!</h3>
             <p style="text-align: center">This is your profile and you may edit it</p>
             <div class="container mt-3">
+
+        <?php 
+        $query = "SELECT * FROM student_info WHERE user_studentNumber = '$studentNumber' AND user_password = '$password'";
+            $qValue = mysqli_query($conn, $query);
+
+            if(mysqli_num_rows($qValue) > 0){
+                while($qResult = mysqli_fetch_assoc($qValue)){
+                    $firstName = $qResult['user_firstName'];
+                    $lastName = $qResult['user_lastName'];
+                    $yearLevel = $qResult['user_yearLevel'];
+                }
+            }
+        ?>
+
                 <form name="landingForm">
                     <div class="row">
                         <div class="col-md-6 col-12-mobile">
                             <input disabled type="text" id="fName" pattern="[A-Za-z0-9]+" name="firstName"
-                                placeholder="First Name">
+                                placeholder="First Name" value='<?php echo $firstName;?>'>
                         </div>
                         <div class="col-md-6 col-12-mobile">
                             <input disabled type="text" id="lName" pattern="[A-Za-z0-9]+" name="lastName"
-                                placeholder="Last Name">
+                                placeholder="Last Name" value='<?php echo $lastName;?>'>
                         </div>
                     </div>
                     <div class="row">
@@ -47,13 +78,12 @@
                     <div class="row">
                         <div class="col-md-6 col-12-mobile">
                             <select class="yrLevel" id="yrLevel" name="yrLevel">
-                                <option selected disabled>YEAR LEVEL</option>
-                                <option value="1">1st YEAR</option>
-                                <option value="2">2nd YEAR</option>
-                                <option value="3">3rd YEAR</option>
-                                <option value="4">4th YEAR</option>
-                                <option value="5">5th YEAR</option>
-                            </select>
+                                <option value="1" <?php echo ($yearLevel==1)?('selected'):(''); ?>>1st Year</option>
+                                <option value="2" <?php echo ($yearLevel==2)?('selected'):(''); ?>>2nd Year</option>
+                                <option value="3" <?php echo ($yearLevel==3)?('selected'):(''); ?>>3rd Year</option>
+                                <option value="4" <?php echo ($yearLevel==4)?('selected'):(''); ?>>4th Year</option>
+                                <option value="5" <?php echo ($yearLevel==5)?('selected'):(''); ?>>5th Year</option>
+                            </select><br/>
                         </div>
 
                         <div class="col-md-6 col-12-mobile">

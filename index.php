@@ -21,7 +21,7 @@
         <div class=" container">
             <h4>Welcome!</h4>
             <p>Please enter your details</p>
-            <form onSubmit="return checkValidation()" action="../configurations/checklogin.php" method="POST" name="loginForm">
+            <form onSubmit="return checkValidation()" action="landing.php" method="POST" name="loginForm">
                 <div class="row">
                     <div class="col-md-12 col-12-mobile">
                         <input pattern="\d*" maxlength="11" id="sNumber" name="sNumber" placeholder="Student Number">

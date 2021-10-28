@@ -11,11 +11,8 @@
             $setSNumber = $studentNumber;
             $setPassword = $password;
             mysqli_query($conn, $sql);
-            header("Location: ../landing.php?login=success");
-        }
-
-        if($returned == 0){
-            echo '<script> alert("ERROR LOGIN"); </script>';
+            header("Location: ../landing.php");
         }
     }
 ?>
+
