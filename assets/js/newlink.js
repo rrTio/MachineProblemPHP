@@ -2,7 +2,7 @@ function openlink() {
   window.location.href = "./registration.php";
 }
 
-function forgotPassword() {
+function openFPassword() {
   window.location.href = "./forgotpassword.php";
 }
 

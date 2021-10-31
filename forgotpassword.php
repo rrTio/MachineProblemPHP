@@ -9,31 +9,31 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
         <link rel="stylesheet" href="assets/css/main.css" />
         <link rel="stylesheet" href="assets/css/forgotPassword.css" />
-        <script src='assets/js/newlink.js'>
-        </script>
+        <script src='assets/js/newlink.js'></script>
+        <script src='assets/js/validation.js'></script>
     </head>
     <body>
         <center>
             <div class="container">
                 <h4>Forgot your password?</h4>
                 <p>You can change it here</p>
-                <form action='configurations/checklogin.php' method="POST">
+                <form name="formFPass" action='index.php' method="POST" onsubmit="return forgotPassword()">
                     <div class="row">
                         <div class="col-md-12 col-12-mobile">
-                            <input pattern="\d*" maxlength="11" id="sNumber" name="sNumber" placeholder="Student Number" required>
+                            <input pattern="\d*" maxlength="11" id="fp_sNumber" name="fp_sNumber" placeholder="Student Number" required>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-12 col-12-mobile">
-                            <input type="password" id="password" name="password" placeholder="Password" required>
+                            <input type="password" id="fp_password" name="fp_password" placeholder="Password" required>
                         </div>
                         <div class="col-md-12 col-12-mobile">
-                            <input type="password" id="confirmPassword" name="confirmPassword"
+                            <input type="password" id="fp_confirmPassword" name="fp_confirmPassword"
                                 placeholder="Confirm Password" required>
                         </div>
                     </div>
                     <center>
-                        <button type="submit" class="custom-btn btnChange ">Change Password</button>
+                        <button type="submit" name="btnCPass" class="custom-btn btnChange">Change Password</button>
                     </center>
                 </form>
             </div>

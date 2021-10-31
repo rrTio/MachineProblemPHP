@@ -12,6 +12,16 @@ function checkValidation() {
   return true;
 }
 
+function forgotPassword() { 
+  var password = document.forms["formFPass"]["fp_password"];
+  var cPassword = document.forms["formFPass"]["fp_confirmPassword"];
+  if (password.value != cPassword.value) { 
+    window.alert("PASSWORD MISMATCH");
+    return false;
+  }
+  return true;
+}
+
 function errorVen() { 
   window.alert("INVALID USERNAME/PASSWORD");
 }

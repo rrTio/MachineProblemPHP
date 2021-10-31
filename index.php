@@ -8,11 +8,17 @@ if(isset($_POST['changeData'])){
     $cProgram = $_POST['change_program'];
     $cGender = $_POST['change_gender'];
     $getStudentNumber = $_POST['sendStudentNumber'];
-    echo $getStudentNumber;
-    echo $cContact;
     $change = "UPDATE student_info SET user_yearLevel = '$cYear', user_email = '$cEmail', user_program = '$cProgram', user_contact = '$cContact', user_gender = '$cGender' 
     WHERE user_studentNumber = '$getStudentNumber';";
     mysqli_query($conn, $change);
+}
+
+if(isset($_POST['btnCPass'])){
+    $userNumber = $_POST['fp_sNumber'];
+    $userPass = $_POST['fp_password'];
+
+    $changePass = "UPDATE student_info SET user_password = '$userPass' WHERE user_studentNumber = '$userNumber'";
+    mysqli_query($conn, $changePass);
 }
 
 ?>
@@ -56,7 +62,7 @@ if(isset($_POST['changeData'])){
                 </center>
             </form>
         </div>
-        <a id="forgotPassword" onClick="forgotPassword();"> Forgot password? </a>
+        <a id="forgotPassword" onClick="openFPassword();"> Forgot password? </a>
         <center>
             <button type="submit" onClick='openlink();' class="custom-btn btn-10 btnCreate" id="newAccount">Create new account</button>
         </center>
