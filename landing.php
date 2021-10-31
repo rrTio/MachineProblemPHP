@@ -9,7 +9,6 @@
     }
 ?>
 
-
 <!DOCTYPE html>
 <html>
 
@@ -53,34 +52,34 @@
             }
         ?>
 
-                <form name="landingForm">
+                <form name="landingForm" action="index.php" method="POST">
                     <div class="row">
                         <div class="col-md-6 col-12-mobile">
-                            <input disabled type="text" id="fName" pattern="[A-Za-z0-9]+" name="firstName"
+                            <input readonly="true" type="text" id="fName" pattern="[A-Za-z ]+" name="sendFirst"
                                 placeholder="First Name" value='<?php echo $firstName;?>'>
                         </div>
                         <div class="col-md-6 col-12-mobile">
-                            <input disabled type="text" id="lName" pattern="[A-Za-z0-9]+" name="lastName"
+                            <input readonly="true" type="text" id="lName" pattern="[A-Za-z ]+" name="lastName"
                                 placeholder="Last Name" value='<?php echo $lastName;?>'>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-6 col-12-mobile">
-                            <input disabled type="number" pattern="/^-?\d+\.?\d*$/" class="studentNumber" onKeyPress="if(this.value.length==11) return false;" id="sNumber" name="sNumber"
-                                placeholder="Student Number" value='<?php echo $studentNumber;?>'>
+                            <input readonly="true" type="number" pattern="/^-?\d+\.?\d*$/" class="studentNumber" onKeyPress="if(this.value.length==11) return false;"  value='<?php echo $studentNumber;?>'
+                                id="sNumber" name="sendStudentNumber" placeholder="Student Number">
                         </div>
                         <div class="col-md-6 col-12-mobile">
-                            <input type="number" pattern="/^-?\d+\.?\d*$/" class="contactNumber" onKeyPress="if(this.value.length==11) return false;" id="contactNumber" name="contactNumber" placeholder="Contact Number" value='<?php echo $contactNumber;?>'>
+                            <input type="number" pattern="/^-?\d+\.?\d*$/" class="contactNumber" onKeyPress="if(this.value.length==11) return false;" id="contactNumber" name="change_contactNumber" placeholder="Contact Number" value='<?php echo $contactNumber;?>'>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-12 col-12-mobile">
-                            <input type="email" id="email" name="email" placeholder="Email" value='<?php echo $email;?>'>
+                            <input type="email" id="email" name="change_email" placeholder="Email" value='<?php echo $email;?>'>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-6 col-12-mobile">
-                            <select class="yrLevel" id="yrLevel" name="yrLevel">
+                            <select class="yrLevel" id="yrLevel" name="change_yrLevel">
                                 <option value="1" <?php echo ($yearLevel==1)?('selected'):(''); ?>>1st Year</option>
                                 <option value="2" <?php echo ($yearLevel==2)?('selected'):(''); ?>>2nd Year</option>
                                 <option value="3" <?php echo ($yearLevel==3)?('selected'):(''); ?>>3rd Year</option>
@@ -88,9 +87,8 @@
                                 <option value="5" <?php echo ($yearLevel==5)?('selected'):(''); ?>>5th Year</option>
                             </select><br/>
                         </div>
-
                         <div class="col-md-6 col-12-mobile">
-                            <select class="program" id="program" name="program">
+                            <select class="program" id="program" name="change_program">
                                 <option selected disabled>PROGRAM</option>
                                 <option value="CENGG" <?php echo ($program=='CENGG')?('selected'):(''); ?>>CENGG</option>
                                 <option value="CCSS" <?php echo ($program=='CCSS')?('selected'):(''); ?>>CCSS</option>
@@ -100,7 +98,7 @@
                     <div class="row align-items-center g-3">
                         <div class="birthdate col-lg-6 col-12-mobile">
                             <h4 id="birthdate">Birthdate: &nbsp;</h4>
-                            <select id="month" name="month" disabled>
+                            <select id="month" name="month">
                                 <option selected disabled>MONTH</option>
                                 <option value="01" <?php echo ($month=='01')?('selected'):(''); ?>>January</option>
                                 <option value="02" <?php echo ($month=='02')?('selected'):(''); ?>>February</option>
@@ -115,7 +113,7 @@
                                 <option value="11" <?php echo ($month=='11')?('selected'):(''); ?>>November</option>
                                 <option value="12" <?php echo ($month=='12')?('selected'):(''); ?>>December</option>
                             </select>
-                            <select id="day" name="day" disabled>
+                            <select id="day" name="day" readonly="true">
                                 <option selected disabled>DAY</option>
                                 <option value="01" <?php echo ($day=='01')?('selected'):(''); ?>>01</option>
                                 <option value="02" <?php echo ($day=='02')?('selected'):(''); ?>>02</option>
@@ -149,7 +147,7 @@
                                 <option value="30" <?php echo ($day=='30')?('selected'):(''); ?>>30</option>
                                 <option value="31" <?php echo ($day=='31')?('selected'):(''); ?>>31</option>
                             </select>
-                            <select id="year" name="year" disabled>
+                            <select id="year" name="year" readonly="true">
                                 <option selected disabled>YEAR</option>
                                 <option value="1980" <?php echo ($year=='1980')?('selected'):(''); ?>>1980</option>
                                 <option value="1981" <?php echo ($year=='1981')?('selected'):(''); ?>>1981</option>
@@ -178,7 +176,7 @@
                             </select>
                         </div>
                         <div class="gender col-lg-6 col-md-auto col-12-mobile">
-                            <select id="gender" name="gender">
+                            <select id="gender" name="change_gender">
                                 <option selected disabled>CHOOSE GENDER</option>
                                 <option value="Male" <?php echo ($gender=='Male')?('selected'):(''); ?>>MALE</option>
                                 <option value="Female" <?php echo ($gender=='Female')?('selected'):(''); ?>>FEMALE</option>
@@ -188,7 +186,7 @@
                     </div>
                     <center>
                         <div class="col-md-6 col-12-mobile buttonRegister">
-                            <button type="submit" class="custom-btn btn-10">Save Changes</button>
+                            <button type="submit" name="changeData" class="custom-btn btn-10">Save Changes</button>
                         </div>
                     </center>
                 </form>

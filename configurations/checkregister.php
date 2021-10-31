@@ -20,6 +20,7 @@
             $newPassword = $month.$day.$year.$surname;
             $password = $newPassword;
         }
+        
         $sql = "INSERT INTO student_info (user_firstName, user_lastName, user_studentNumber, user_yearLevel, user_email, user_password, user_program, 
         user_contact, user_birthMonth, user_birthDay, user_birthYear, user_gender) 
         VALUES ('$firstName','$lastName','$studentNumber','$yrLevel','$email','$password','$program','$contactNumber','$month','$day','$year','$gender');";
