@@ -18,7 +18,7 @@
             <h3>SIGN UP</h3>
             <p style="text-align: center">It's quick and easy</p>
             <div class="container mt-3">
-                <form action="configurations/checkregister.php" method="POST">
+                <form action="./configurations/checkregister.php" method="POST">
                     <div class="row">
                         <div class="col-md-6 col-12-mobile">
                             <input type="text" id="firstName" pattern="[A-Za-z0-9]+" name="firstName"
@@ -155,7 +155,7 @@
                     </div>
                     <center>
                         <div class=" col-md-6 col-12-mobile buttonRegister">
-                            <button type="submit" name="submit" class=" custom-btn btn-10">Register</button>
+                            <button type="submit" name="register" class=" custom-btn btn-10">Register</button>
                         </div>
                     </center>
                 </form>
