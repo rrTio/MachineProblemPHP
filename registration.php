@@ -21,33 +21,33 @@
                 <form action="./configurations/checkregister.php" method="POST">
                     <div class="row">
                         <div class="col-md-6 col-12-mobile">
-                            <input type="text" id="firstName" pattern="[A-Za-z0-9]+" name="firstName"
-                                placeholder="First Name">
+                            <input type="text" id="firstName" pattern="[A-Za-z ]+" name="firstName"
+                                placeholder="First Name" required>
                         </div>
                         <div class="col-md-6 col-12-mobile">
-                            <input type="text" id="lastName" pattern="[A-Za-z0-9]+" name="lastName"
-                                placeholder="Last Name">
+                            <input type="text" id="lastName" pattern="[A-Za-z ]+" name="lastName"
+                                placeholder="Last Name" required>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-6 col-12-mobile">
                             <input type="number" pattern="/^-?\d+\.?\d*$/" class="contactNumber" onKeyPress="if(this.value.length==11) return false;" id="sNumber" name="sNumber"
-                                placeholder="Student Number">
+                                placeholder="Student Number" required>
                         </div>
 
                         <div class="col-md-6 col-12-mobile">
                             <input type="number" pattern="/^-?\d+\.?\d*$/" class="contactNumber" onKeyPress="if(this.value.length==11) return false;" id="contactNumber"
-                                name="contactNumber" placeholder="Contact Number">
+                                name="contactNumber" placeholder="Contact Number" required>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-12 col-12-mobile">
-                            <input type="email" id="email" name="email" placeholder="Email">
+                            <input type="email" id="email" name="email" placeholder="Email" required>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-6 col-12-mobile">
-                            <select class="yrLevel" id="yrLevel" name="yrLevel">
+                            <select class="yrLevel" id="yrLevel" name="yrLevel" required>
                                 <option selected disabled>YEAR LEVEL</option>
                                 <option value="1st Year">1st YEAR</option>
                                 <option value="2nd Year">2nd YEAR</option>
@@ -57,7 +57,7 @@
                             </select>
                         </div>
                         <div class="col-md-6 col-12-mobile">
-                            <select class="program" id="program" name="program">
+                            <select class="program" id="program" name="program" required>
                                 <option selected disabled>PROGRAM</option>
                                 <option value="CENGG">CENGG</option>
                                 <option value="CCSS">CCSS</option>
@@ -67,7 +67,7 @@
                     <div class="row align-items-center g-3">
                         <div class="birthdate col-lg-6 col-12-mobile">
                             <h4 id="birthdate">Birthdate: &nbsp;</h4>
-                            <select id="month" name="month">
+                            <select id="month" name="month" required>
                                 <option selected disabled>MONTH</option>
                                 <option value="01">January</option>
                                 <option value="02">February</option>
@@ -82,7 +82,7 @@
                                 <option value="11">November</option>
                                 <option value="12">December</option>
                             </select>
-                            <select id="day" name="day">
+                            <select id="day" name="day" required>
                                 <option selected disabled>DAY</option>
                                 <option value="01">01</option>
                                 <option value="02">02</option>
@@ -116,7 +116,7 @@
                                 <option value="30">30</option>
                                 <option value="31">31</option>
                             </select>
-                            <select id="year" name="year">
+                            <select id="year" name="year" required>
                                 <option selected disabled>YEAR</option>
                                 <option value="1980">1980</option>
                                 <option value="1981">1981</option>
@@ -145,7 +145,7 @@
                             </select>
                         </div>
                         <div class="gender col-lg-6 col-md-auto col-12-mobile">
-                            <select id="gender" name="gender">
+                            <select id="gender" name="gender" required>
                                 <option selected disabled>CHOOSE GENDER</option>
                                 <option value="Male">MALE</option>
                                 <option value="Female">FEMALE</option>

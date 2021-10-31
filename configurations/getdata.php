@@ -1,7 +1,6 @@
 <?php 
 
-    include_once('../configurations/config.php');
-    include('../configurations/checklogin.php');
+    include_once('config.php');
 
     $getPWD = $setPassword;
     $getSN = $setSNumber;

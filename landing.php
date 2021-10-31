@@ -6,11 +6,6 @@
         $password = $_POST['password'];
         $sql = mysqli_query($conn, "SELECT * FROM student_info WHERE user_studentNumber = '$studentNumber' AND user_password = '$password'");
         $returned = mysqli_fetch_array($sql);
-
-        if($returned > 0){
-            echo "record found";
-        }
-        echo "no record found";
     }
 ?>
 
@@ -45,7 +40,15 @@
                 while($qResult = mysqli_fetch_assoc($qValue)){
                     $firstName = $qResult['user_firstName'];
                     $lastName = $qResult['user_lastName'];
+                    $studentNumber = $qResult['user_studentNumber'];
+                    $contactNumber = $qResult['user_contact'];
+                    $email = $qResult['user_email'];
                     $yearLevel = $qResult['user_yearLevel'];
+                    $program = $qResult['user_program'];
+                    $month = $qResult['user_birthMonth'];
+                    $day = $qResult['user_birthDay'];
+                    $year = $qResult['user_birthYear'];
+                    $gender = $qResult['user_gender'];
                 }
             }
         ?>
@@ -63,16 +66,16 @@
                     </div>
                     <div class="row">
                         <div class="col-md-6 col-12-mobile">
-                            <input disabled type="number" pattern="/^-?\d+\.?\d*$/" class="contactNumber" onKeyPress="if(this.value.length==11) return false;" id="sNumber" name="sNumber"
-                                placeholder="Student Number">
+                            <input disabled type="number" pattern="/^-?\d+\.?\d*$/" class="studentNumber" onKeyPress="if(this.value.length==11) return false;" id="sNumber" name="sNumber"
+                                placeholder="Student Number" value='<?php echo $studentNumber;?>'>
                         </div>
                         <div class="col-md-6 col-12-mobile">
-                            <input type="number" pattern="/^-?\d+\.?\d*$/" class="contactNumber" onKeyPress="if(this.value.length==11) return false;" id="contactNumber" name="contactNumber" placeholder="Contact Number">
+                            <input type="number" pattern="/^-?\d+\.?\d*$/" class="contactNumber" onKeyPress="if(this.value.length==11) return false;" id="contactNumber" name="contactNumber" placeholder="Contact Number" value='<?php echo $contactNumber;?>'>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-12 col-12-mobile">
-                            <input type="email" id="email" name="email" placeholder="Email">
+                            <input type="email" id="email" name="email" placeholder="Email" value='<?php echo $email;?>'>
                         </div>
                     </div>
                     <div class="row">
@@ -89,97 +92,97 @@
                         <div class="col-md-6 col-12-mobile">
                             <select class="program" id="program" name="program">
                                 <option selected disabled>PROGRAM</option>
-                                <option value="CENGG">CENGG</option>
-                                <option value="CCSS">CCSS</option>
+                                <option value="CENGG" <?php echo ($program=='CENGG')?('selected'):(''); ?>>CENGG</option>
+                                <option value="CCSS" <?php echo ($program=='CCSS')?('selected'):(''); ?>>CCSS</option>
                             </select>
                         </div>
                     </div>
                     <div class="row align-items-center g-3">
                         <div class="birthdate col-lg-6 col-12-mobile">
                             <h4 id="birthdate">Birthdate: &nbsp;</h4>
-                            <select id="month" name="month">
+                            <select id="month" name="month" disabled>
                                 <option selected disabled>MONTH</option>
-                                <option value="01">January</option>
-                                <option value="02">February</option>
-                                <option value="03">March</option>
-                                <option value="04">April</option>
-                                <option value="05">May</option>
-                                <option value="06">June</option>
-                                <option value="07">July</option>
-                                <option value="08">August</option>
-                                <option value="09">September</option>
-                                <option value="10">October</option>
-                                <option value="11">November</option>
-                                <option value="12">December</option>
+                                <option value="01" <?php echo ($month=='01')?('selected'):(''); ?>>January</option>
+                                <option value="02" <?php echo ($month=='02')?('selected'):(''); ?>>February</option>
+                                <option value="03" <?php echo ($month=='03')?('selected'):(''); ?>>March</option>
+                                <option value="04" <?php echo ($month=='04')?('selected'):(''); ?>>April</option>
+                                <option value="05" <?php echo ($month=='05')?('selected'):(''); ?>>May</option>
+                                <option value="06" <?php echo ($month=='06')?('selected'):(''); ?>>June</option>
+                                <option value="07" <?php echo ($month=='07')?('selected'):(''); ?>>July</option>
+                                <option value="08" <?php echo ($month=='08')?('selected'):(''); ?>>August</option>
+                                <option value="09" <?php echo ($month=='09')?('selected'):(''); ?>>September</option>
+                                <option value="10" <?php echo ($month=='10')?('selected'):(''); ?>>October</option>
+                                <option value="11" <?php echo ($month=='11')?('selected'):(''); ?>>November</option>
+                                <option value="12" <?php echo ($month=='12')?('selected'):(''); ?>>December</option>
                             </select>
-                            <select id="day" name="day">
+                            <select id="day" name="day" disabled>
                                 <option selected disabled>DAY</option>
-                                <option value="01">01</option>
-                                <option value="02">02</option>
-                                <option value="03">03</option>
-                                <option value="04">04</option>
-                                <option value="05">05</option>
-                                <option value="06">06</option>
-                                <option value="07">07</option>
-                                <option value="08">08</option>
-                                <option value="09">09</option>
-                                <option value="10">10</option>
-                                <option value="11">11</option>
-                                <option value="12">12</option>
-                                <option value="13">13</option>
-                                <option value="14">14</option>
-                                <option value="15">15</option>
-                                <option value="16">16</option>
-                                <option value="17">17</option>
-                                <option value="18">18</option>
-                                <option value="19">19</option>
-                                <option value="20">20</option>
-                                <option value="21">21</option>
-                                <option value="22">22</option>
-                                <option value="23">23</option>
-                                <option value="24">24</option>
-                                <option value="25">25</option>
-                                <option value="26">26</option>
-                                <option value="27">27</option>
-                                <option value="28">28</option>
-                                <option value="29">29</option>
-                                <option value="30">30</option>
-                                <option value="31">31</option>
+                                <option value="01" <?php echo ($day=='01')?('selected'):(''); ?>>01</option>
+                                <option value="02" <?php echo ($day=='02')?('selected'):(''); ?>>02</option>
+                                <option value="03" <?php echo ($day=='03')?('selected'):(''); ?>>03</option>
+                                <option value="04" <?php echo ($day=='04')?('selected'):(''); ?>>04</option>
+                                <option value="05" <?php echo ($day=='05')?('selected'):(''); ?>>05</option>
+                                <option value="06" <?php echo ($day=='06')?('selected'):(''); ?>>06</option>
+                                <option value="07" <?php echo ($day=='07')?('selected'):(''); ?>>07</option>
+                                <option value="08" <?php echo ($day=='08')?('selected'):(''); ?>>08</option>
+                                <option value="09" <?php echo ($day=='09')?('selected'):(''); ?>>09</option>
+                                <option value="10" <?php echo ($day=='10')?('selected'):(''); ?>>10</option>
+                                <option value="11" <?php echo ($day=='11')?('selected'):(''); ?>>11</option>
+                                <option value="12" <?php echo ($day=='12')?('selected'):(''); ?>>12</option>
+                                <option value="13" <?php echo ($day=='13')?('selected'):(''); ?>>13</option>
+                                <option value="14" <?php echo ($day=='14')?('selected'):(''); ?>>14</option>
+                                <option value="15" <?php echo ($day=='15')?('selected'):(''); ?>>15</option>
+                                <option value="16" <?php echo ($day=='16')?('selected'):(''); ?>>16</option>
+                                <option value="17" <?php echo ($day=='17')?('selected'):(''); ?>>17</option>
+                                <option value="18" <?php echo ($day=='18')?('selected'):(''); ?>>18</option>
+                                <option value="19" <?php echo ($day=='19')?('selected'):(''); ?>>19</option>
+                                <option value="20" <?php echo ($day=='20')?('selected'):(''); ?>>20</option>
+                                <option value="21" <?php echo ($day=='21')?('selected'):(''); ?>>21</option>
+                                <option value="22" <?php echo ($day=='22')?('selected'):(''); ?>>22</option>
+                                <option value="23" <?php echo ($day=='23')?('selected'):(''); ?>>23</option>
+                                <option value="24" <?php echo ($day=='24')?('selected'):(''); ?>>24</option>
+                                <option value="25" <?php echo ($day=='25')?('selected'):(''); ?>>25</option>
+                                <option value="26" <?php echo ($day=='26')?('selected'):(''); ?>>26</option>
+                                <option value="27" <?php echo ($day=='27')?('selected'):(''); ?>>27</option>
+                                <option value="28" <?php echo ($day=='28')?('selected'):(''); ?>>28</option>
+                                <option value="29" <?php echo ($day=='29')?('selected'):(''); ?>>29</option>
+                                <option value="30" <?php echo ($day=='30')?('selected'):(''); ?>>30</option>
+                                <option value="31" <?php echo ($day=='31')?('selected'):(''); ?>>31</option>
                             </select>
-                            <select id="year" name="year">
+                            <select id="year" name="year" disabled>
                                 <option selected disabled>YEAR</option>
-                                <option value="1980">1980</option>
-                                <option value="1981">1981</option>
-                                <option value="1982">1982</option>
-                                <option value="1983">1983</option>
-                                <option value="1984">1984</option>
-                                <option value="1985">1985</option>
-                                <option value="1986">1986</option>
-                                <option value="1987">1987</option>
-                                <option value="1988">1988</option>
-                                <option value="1989">1989</option>
-                                <option value="1990">1990</option>
-                                <option value="1991">1991</option>
-                                <option value="1992">1992</option>
-                                <option value="1993">1993</option>
-                                <option value="1994">1994</option>
-                                <option value="1995">1995</option>
-                                <option value="1996">1996</option>
-                                <option value="1997">1997</option>
-                                <option value="1998">1998</option>
-                                <option value="1999">1999</option>
-                                <option value="2000">2000</option>
-                                <option value="2001">2001</option>
-                                <option value="2002">2002</option>
-                                <option value="2003">2003</option>
+                                <option value="1980" <?php echo ($year=='1980')?('selected'):(''); ?>>1980</option>
+                                <option value="1981" <?php echo ($year=='1981')?('selected'):(''); ?>>1981</option>
+                                <option value="1982" <?php echo ($year=='1982')?('selected'):(''); ?>>1982</option>
+                                <option value="1983" <?php echo ($year=='1983')?('selected'):(''); ?>>1983</option>
+                                <option value="1984" <?php echo ($year=='1984')?('selected'):(''); ?>>1984</option>
+                                <option value="1985" <?php echo ($year=='1985')?('selected'):(''); ?>>1985</option>
+                                <option value="1986" <?php echo ($year=='1986')?('selected'):(''); ?>>1986</option>
+                                <option value="1987" <?php echo ($year=='1987')?('selected'):(''); ?>>1987</option>
+                                <option value="1988" <?php echo ($year=='1988')?('selected'):(''); ?>>1988</option>
+                                <option value="1989" <?php echo ($year=='1989')?('selected'):(''); ?>>1989</option>
+                                <option value="1990" <?php echo ($year=='1990')?('selected'):(''); ?>>1990</option>
+                                <option value="1991" <?php echo ($year=='1991')?('selected'):(''); ?>>1991</option>
+                                <option value="1992" <?php echo ($year=='1992')?('selected'):(''); ?>>1992</option>
+                                <option value="1993" <?php echo ($year=='1993')?('selected'):(''); ?>>1993</option>
+                                <option value="1994" <?php echo ($year=='1994')?('selected'):(''); ?>>1994</option>
+                                <option value="1995" <?php echo ($year=='1995')?('selected'):(''); ?>>1995</option>
+                                <option value="1996" <?php echo ($year=='1996')?('selected'):(''); ?>>1996</option>
+                                <option value="1997" <?php echo ($year=='1997')?('selected'):(''); ?>>1997</option>
+                                <option value="1998" <?php echo ($year=='1998')?('selected'):(''); ?>>1998</option>
+                                <option value="1999" <?php echo ($year=='1999')?('selected'):(''); ?>>1999</option>
+                                <option value="2000" <?php echo ($year=='2000')?('selected'):(''); ?>>2000</option>
+                                <option value="2001" <?php echo ($year=='2001')?('selected'):(''); ?>>2001</option>
+                                <option value="2002" <?php echo ($year=='2002')?('selected'):(''); ?>>2002</option>
+                                <option value="2003" <?php echo ($year=='2003')?('selected'):(''); ?>>2003</option>
                             </select>
                         </div>
                         <div class="gender col-lg-6 col-md-auto col-12-mobile">
                             <select id="gender" name="gender">
                                 <option selected disabled>CHOOSE GENDER</option>
-                                <option value="Male">MALE</option>
-                                <option value="Female">FEMALE</option>
-                                <option value="Unavailable">PREFER NOT TO SAY</option>
+                                <option value="Male" <?php echo ($gender=='Male')?('selected'):(''); ?>>MALE</option>
+                                <option value="Female" <?php echo ($gender=='Female')?('selected'):(''); ?>>FEMALE</option>
+                                <option value="Unavailable" <?php echo ($gender=='Unavailable')?('selected'):(''); ?>>PREFER NOT TO SAY</option>
                             </select>
                         </div>
                     </div>

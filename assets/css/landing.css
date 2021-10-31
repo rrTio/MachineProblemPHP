@@ -57,6 +57,7 @@ input[type="radio"] {
   border: 1px solid #796d6d;
   height: 32px;
   width: 100%;
+  color:#000000;
 }
 
 @media screen and (max-width: 767px) {
