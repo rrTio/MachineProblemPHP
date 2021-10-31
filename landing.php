@@ -53,15 +53,14 @@
                 }
             }
         ?>
-
                 <form name="landingForm" action="index.php" method="POST">
                     <div class="row">
                         <div class="col-md-6 col-12-mobile">
-                            <input readonly="true" type="text" id="fName" pattern="[A-Za-z ]+" name="sendFirst"
+                            <input  type="text" id="fName" pattern="[A-Za-z ]+" name="change_firstName"
                                 placeholder="First Name" value='<?php echo $firstName;?>'>
                         </div>
                         <div class="col-md-6 col-12-mobile">
-                            <input readonly="true" type="text" id="lName" pattern="[A-Za-z ]+" name="lastName"
+                            <input  type="text" id="lName" pattern="[A-Za-z ]+" name="change_lastName"
                                 placeholder="Last Name" value='<?php echo $lastName;?>'>
                         </div>
                     </div>
@@ -195,7 +194,7 @@
                             <div class="col-md-6 col-12-mobile buttonRegister"> 
                                 <button type="submit" name="deleteData" class="custom-btn btnDelete">Delete Account</button>
                             </div>
-                       </div>
+                        </div>
                     </center>
                 </form>
             </div>

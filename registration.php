@@ -21,11 +21,11 @@
                 <form action="./configurations/checkregister.php" method="POST">
                     <div class="row">
                         <div class="col-md-6 col-12-mobile">
-                            <input type="text" id="firstName" pattern="[A-Za-z ]+" name="firstName"
+                            <input type="text" id="fName" pattern="[A-Za-z ]+" name="firstName"
                                 placeholder="First Name" required>
                         </div>
                         <div class="col-md-6 col-12-mobile">
-                            <input type="text" id="lastName" pattern="[A-Za-z ]+" name="lastName"
+                            <input type="text" id="lName" pattern="[A-Za-z ]+" name="lastName"
                                 placeholder="Last Name" required>
                         </div>
                     </div>

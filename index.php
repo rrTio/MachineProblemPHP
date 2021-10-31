@@ -1,23 +1,20 @@
 <?php
 include_once('./configurations/config.php');
 if(isset($_POST['changeData'])){
+    $cFirstName = $_POST['change_firstName'];    
+    $cLastName = $_POST['change_lastName'];
     $cContact = $_POST['change_contactNumber'];
     $cEmail = $_POST['change_email'];
     $cYear = $_POST['change_yrLevel'];
     $cProgram = $_POST['change_program'];
-    $cGender = $_POST['change_gender'];
     $getStudentNumber = $_POST['sendStudentNumber'];
-    $change = "UPDATE student_info SET user_yearLevel = '$cYear', user_email = '$cEmail', user_program = '$cProgram', user_contact = '$cContact', user_gender = '$cGender' 
+    $change = "UPDATE student_info SET user_firstName = '$cFirstName', user_lastName = '$cLastName', user_yearLevel = '$cYear', user_email = '$cEmail', user_program = '$cProgram', user_contact = '$cContact'
     WHERE user_studentNumber = '$getStudentNumber';";
     mysqli_query($conn, $change);
 }
 
 if(isset($_POST['deleteData'])){
-    $cContact = $_POST['change_contactNumber'];
     $cEmail = $_POST['change_email'];
-    $cYear = $_POST['change_yrLevel'];
-    $cProgram = $_POST['change_program'];
-    $cGender = $_POST['change_gender'];
     $getStudentNumber = $_POST['sendStudentNumber'];
     $delete = "DELETE FROM student_info WHERE user_email = '$cEmail' AND user_studentNumber = '$getStudentNumber';";
     mysqli_query($conn, $delete);
@@ -30,7 +27,6 @@ if(isset($_POST['btnCPass'])){
     $changePass = "UPDATE student_info SET user_password = '$userPass' WHERE user_studentNumber = '$userNumber'";
     mysqli_query($conn, $changePass);
 }
-
 ?>
 
 <!DOCTYPE html>
