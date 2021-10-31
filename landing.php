@@ -1,7 +1,8 @@
 <?php
     include_once('./configurations/config.php');
 
-    if(isset($_POST['btnLogin'])){
+    if(isset($_POST['btnLogin']))
+    {
         $studentNumber = $_POST['sNumber'];
         $password = $_POST['password'];
         $sql = mysqli_query($conn, "SELECT * FROM student_info WHERE user_studentNumber = '$studentNumber' AND user_password = '$password'");
@@ -32,11 +33,12 @@
             <div class="container mt-3">
 
         <?php 
-        $query = "SELECT * FROM student_info WHERE user_studentNumber = '$studentNumber' AND user_password = '$password'";
+            $query = "SELECT * FROM student_info WHERE user_studentNumber = '$studentNumber' AND user_password = '$password'";
             $qValue = mysqli_query($conn, $query);
-
-            if(mysqli_num_rows($qValue) > 0){
-                while($qResult = mysqli_fetch_assoc($qValue)){
+            if(mysqli_num_rows($qValue) > 0)
+            {
+                while($qResult = mysqli_fetch_assoc($qValue))
+                {
                     $firstName = $qResult['user_firstName'];
                     $lastName = $qResult['user_lastName'];
                     $studentNumber = $qResult['user_studentNumber'];
@@ -184,10 +186,16 @@
                             </select>
                         </div>
                     </div>
+                    
                     <center>
-                        <div class="col-md-6 col-12-mobile buttonRegister">
-                            <button type="submit" name="changeData" class="custom-btn btn-10">Save Changes</button>
-                        </div>
+                        <div class="row">
+                            <div class="col-md-6 col-12-mobile buttonRegister">
+                                <button type="submit" name="changeData" class="custom-btn btn-10">Save Changes</button>
+                            </div>
+                            <div class="col-md-6 col-12-mobile buttonRegister"> 
+                                <button type="submit" name="deleteData" class="custom-btn btnDelete">Delete Account</button>
+                            </div>
+                       </div>
                     </center>
                 </form>
             </div>

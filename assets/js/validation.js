@@ -15,11 +15,11 @@ function checkValidation() {
 function forgotPassword() { 
   var password = document.forms["formFPass"]["fp_password"];
   var cPassword = document.forms["formFPass"]["fp_confirmPassword"];
-  if (password.value != cPassword.value) { 
+  if (password != cPassword) { 
     window.alert("PASSWORD MISMATCH");
     return false;
   }
-  return true;
+  return true
 }
 
 function errorVen() { 

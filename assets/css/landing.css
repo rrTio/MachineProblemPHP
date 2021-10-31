@@ -126,6 +126,42 @@ input[type="radio"] {
   transform: scale(1);
 }
 
+.btnDelete {
+  border-radius: 20px;
+  border: none;
+  box-shadow: 0 0 5px #000000;
+  font-weight: 600;
+  color: #000;
+  background-color: #FF2511;
+  z-index: 2;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  margin-bottom: 5%;
+}
+.btnDelete:after {
+  border-radius: 20px;
+  position: absolute;
+  content: " ";
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background-color: #BA0F30;
+  color: #000000;
+  transition: all 0.3s ease;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+}
+.btnDelete:hover {
+  border: none;
+  color: #000;
+}
+.btnDelete:hover:after {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+
 .buttonRegister {
   margin-top: 4%;
 }

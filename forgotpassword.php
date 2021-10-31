@@ -33,14 +33,12 @@
                         </div>
                     </div>
                     <center>
-                        <button type="submit" name="btnCPass" class="custom-btn btnChange">Change Password</button>
+                        <button type="submit" id="checkPass" name="btnCPass" class="custom-btn btnChange">Change Password</button>
                     </center>
                 </form>
             </div>
             <center>
-                <button type="submit" onClick='openlink()' class="custom-btn btn-10 btnCreate" id="newAccount">Create New
-                    Account
-                </button>
+                <button type="submit" onClick='openlink()' class="custom-btn btn-10 btnCreate" id="newAccount">Create New Account</button>
             </center>
         </center>
     </body>
