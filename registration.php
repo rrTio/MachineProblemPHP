@@ -18,7 +18,7 @@
             <h3>SIGN UP</h3>
             <p style="text-align: center">It's quick and easy</p>
             <div class="container mt-3">
-                <form action="./configurations/checkregister.php" method="POST">
+                <form action="./configurations/database.php" method="POST">
                     <div class="row">
                         <div class="col-md-6 col-12-mobile">
                             <input type="text" id="fName" pattern="[A-Za-z ]+" name="firstName"
@@ -34,7 +34,6 @@
                             <input type="number" pattern="/^-?\d+\.?\d*$/" class="contactNumber" onKeyPress="if(this.value.length==11) return false;" id="sNumber" name="sNumber"
                                 placeholder="Student Number" required>
                         </div>
-
                         <div class="col-md-6 col-12-mobile">
                             <input type="number" pattern="/^-?\d+\.?\d*$/" class="contactNumber" onKeyPress="if(this.value.length==11) return false;" id="contactNumber"
                                 name="contactNumber" placeholder="Contact Number" required>
@@ -59,8 +58,14 @@
                         <div class="col-md-6 col-12-mobile">
                             <select class="program" id="program" name="program" required>
                                 <option selected disabled>PROGRAM</option>
-                                <option value="CENGG">CENGG</option>
-                                <option value="CCSS">CCSS</option>
+                                <option value="BSEE">Bachelor of Science in Electrical Engineering</option>
+                                <option value="BSCPE">Bachelor of Science in Computer Engineering</option>
+                                <option value="BSME">Bachelor of Science in Mechanical Engineering</option>
+                                <option value="BSIT">Bachelor of Science in Information Technology</option>
+                                <option value="BSCS">Bachelor of Science in Computer Science</option>
+                                <option value="BSIS">Bachelor of Science in Information System</option>
+                                <option value="BSEMC">Bachelor of Science in Entertainment and Multimedia Computing</option>
+                                <option value="BSDS">Bachelor of Science in Data Science</option>
                             </select>
                         </div>
                     </div>
@@ -146,7 +151,7 @@
                         </div>
                         <div class="gender col-lg-6 col-md-auto col-12-mobile">
                             <select id="gender" name="gender" required>
-                                <option selected disabled>CHOOSE GENDER</option>
+                                <option selected disabled>GENDER</option>
                                 <option value="Male">MALE</option>
                                 <option value="Female">FEMALE</option>
                                 <option value="Unavailable">PREFER NOT TO SAY</option>

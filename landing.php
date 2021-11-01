@@ -53,7 +53,7 @@
                 }
             }
         ?>
-                <form name="landingForm" action="index.php" method="POST">
+                <form name="landingForm" action="./configurations/database.php" method="POST">
                     <div class="row">
                         <div class="col-md-6 col-12-mobile">
                             <input  type="text" id="fName" pattern="[A-Za-z ]+" name="change_firstName"
@@ -91,8 +91,14 @@
                         <div class="col-md-6 col-12-mobile">
                             <select class="program" id="program" name="change_program">
                                 <option selected disabled>PROGRAM</option>
-                                <option value="CENGG" <?php echo ($program=='CENGG')?('selected'):(''); ?>>CENGG</option>
-                                <option value="CCSS" <?php echo ($program=='CCSS')?('selected'):(''); ?>>CCSS</option>
+                                <option value="BSEE"<?php echo ($program=='BSEE')?('selected'):(''); ?>>Bachelor of Science in Electrical Engineering</option>
+                                <option value="BSCPE"<?php echo ($program=='BSCPE')?('selected'):(''); ?>>Bachelor of Science in Computer Engineering</option>
+                                <option value="BSME"<?php echo ($program=='BSME')?('selected'):(''); ?>>Bachelor of Science in Mechanical Engineering</option>
+                                <option value="BSIT"<?php echo ($program=='BSIT')?('selected'):(''); ?>>Bachelor of Science in Information Technology</option>
+                                <option value="BSCS"<?php echo ($program=='BSCS')?('selected'):(''); ?>>Bachelor of Science in Computer Science</option>
+                                <option value="BSIS"<?php echo ($program=='BSIS')?('selected'):(''); ?>>Bachelor of Science in Information System</option>
+                                <option value="BSEMC"<?php echo ($program=='BSEMC')?('selected'):(''); ?>>Bachelor of Science in Entertainment and Multimedia Computing</option>
+                                <option value="BSDS"<?php echo ($program=='BSDS')?('selected'):(''); ?>>Bachelor of Science in Data Science</option>
                             </select>
                         </div>
                     </div>
@@ -178,7 +184,7 @@
                         </div>
                         <div class="gender col-lg-6 col-md-auto col-12-mobile">
                             <select id="gender" name="change_gender">
-                                <option selected disabled>CHOOSE GENDER</option>
+                                <option selected disabled>GENDER</option>
                                 <option value="Male" <?php echo ($gender=='Male')?('selected'):(''); ?>>MALE</option>
                                 <option value="Female" <?php echo ($gender=='Female')?('selected'):(''); ?>>FEMALE</option>
                                 <option value="Unavailable" <?php echo ($gender=='Unavailable')?('selected'):(''); ?>>PREFER NOT TO SAY</option>

@@ -25,3 +25,11 @@ function forgotPassword() {
 function errorVen() { 
   window.alert("INVALID USERNAME/PASSWORD");
 }
+
+function openlink() {
+  window.location.href = "./registration.php";
+}
+
+function openFPassword() {
+  window.location.href = "./forgotpassword.php";
+}

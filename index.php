@@ -1,33 +1,4 @@
-<?php
-include_once('./configurations/config.php');
-if(isset($_POST['changeData'])){
-    $cFirstName = $_POST['change_firstName'];    
-    $cLastName = $_POST['change_lastName'];
-    $cContact = $_POST['change_contactNumber'];
-    $cEmail = $_POST['change_email'];
-    $cYear = $_POST['change_yrLevel'];
-    $cProgram = $_POST['change_program'];
-    $getStudentNumber = $_POST['sendStudentNumber'];
-    $change = "UPDATE student_info SET user_firstName = '$cFirstName', user_lastName = '$cLastName', user_yearLevel = '$cYear', user_email = '$cEmail', user_program = '$cProgram', user_contact = '$cContact'
-    WHERE user_studentNumber = '$getStudentNumber';";
-    mysqli_query($conn, $change);
-}
 
-if(isset($_POST['deleteData'])){
-    $cEmail = $_POST['change_email'];
-    $getStudentNumber = $_POST['sendStudentNumber'];
-    $delete = "DELETE FROM student_info WHERE user_email = '$cEmail' AND user_studentNumber = '$getStudentNumber';";
-    mysqli_query($conn, $delete);
-}
-
-if(isset($_POST['btnCPass'])){
-    $userNumber = $_POST['fp_sNumber'];
-    $userPass = $_POST['fp_password'];
-
-    $changePass = "UPDATE student_info SET user_password = '$userPass' WHERE user_studentNumber = '$userNumber'";
-    mysqli_query($conn, $changePass);
-}
-?>
 
 <!DOCTYPE html>
 <html>
@@ -42,7 +13,6 @@ if(isset($_POST['btnCPass'])){
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="assets/css/main.css" />
     <link rel="stylesheet" href="assets/css/login.css" />
-    <script src='./assets/js/newlink.js'></script>
     <script src='./assets/js/validation.js'></script>
     </script>
 </head>

@@ -17,7 +17,7 @@
             <div class="container">
                 <h4>Forgot your password?</h4>
                 <p>You can change it here</p>
-                <form name="formFPass" action='index.php' method="POST" onsubmit="return forgotPassword()">
+                <form name="formFPass" action="./configurations/database.php" method="POST" onsubmit="return forgotPassword()">
                     <div class="row">
                         <div class="col-md-12 col-12-mobile">
                             <input pattern="\d*" maxlength="11" id="fp_sNumber" name="fp_sNumber" placeholder="Student Number" required>
