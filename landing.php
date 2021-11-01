@@ -81,11 +81,11 @@
                     <div class="row">
                         <div class="col-md-6 col-12-mobile">
                             <select class="yrLevel" id="yrLevel" name="change_yrLevel">
-                                <option value="1" <?php echo ($yearLevel==1)?('selected'):(''); ?>>1st Year</option>
-                                <option value="2" <?php echo ($yearLevel==2)?('selected'):(''); ?>>2nd Year</option>
-                                <option value="3" <?php echo ($yearLevel==3)?('selected'):(''); ?>>3rd Year</option>
-                                <option value="4" <?php echo ($yearLevel==4)?('selected'):(''); ?>>4th Year</option>
-                                <option value="5" <?php echo ($yearLevel==5)?('selected'):(''); ?>>5th Year</option>
+                                <option value="1st Year" <?php echo ($yearLevel=='1st Year')?('selected'):(''); ?>>1st Year</option>
+                                <option value="2nd Year" <?php echo ($yearLevel=='2nd Year')?('selected'):(''); ?>>2nd Year</option>
+                                <option value="3rd Year" <?php echo ($yearLevel=='3rd Year')?('selected'):(''); ?>>3rd Year</option>
+                                <option value="4th Year" <?php echo ($yearLevel=='4th Year')?('selected'):(''); ?>>4th Year</option>
+                                <option value="5th Year" <?php echo ($yearLevel=='5th Year')?('selected'):(''); ?>>5th Year</option>
                             </select><br/>
                         </div>
                         <div class="col-md-6 col-12-mobile">

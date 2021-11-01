@@ -39,6 +39,7 @@
         $change = "UPDATE student_info SET user_firstName = '$cFirstName', user_lastName = '$cLastName', user_yearLevel = '$cYear', user_email = '$cEmail', user_program = '$cProgram', user_contact = '$cContact'
         WHERE user_studentNumber = '$getStudentNumber';";
         mysqli_query($conn, $change);
+        header("Location: ../index.php");
     }
 
     if(isset($_POST['deleteData'])){
@@ -46,6 +47,7 @@
         $getStudentNumber = $_POST['sendStudentNumber'];
         $delete = "DELETE FROM student_info WHERE user_email = '$cEmail' AND user_studentNumber = '$getStudentNumber';";
         mysqli_query($conn, $delete);
+        header("Location: ../index.php");
     }
 
     if(isset($_POST['btnCPass'])){
@@ -54,5 +56,6 @@
 
         $changePass = "UPDATE student_info SET user_password = '$userPass' WHERE user_studentNumber = '$userNumber'";
         mysqli_query($conn, $changePass);
+        header("Location: ../index.php");
     }
 ?>
