@@ -33,3 +33,13 @@ function openlink() {
 function openFPassword() {
   window.location.href = "./forgotpassword.php";
 }
+
+function checkEMail() { 
+  var regEmail = document.forms['regForm']['email'];
+  var landEmail = document.forms['landingForm']['change_email'];
+  if (!/@ue.edu.ph\s*$/.test(regEmail) || !/@ue.edu.ph\s*$/.test(landEmail)) {
+    window.alert("EMAIL DOMAIN SHOULD BE '@UE.EDU.PH'!");
+    return false;
+  }
+  return true
+}

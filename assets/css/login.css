@@ -124,3 +124,7 @@ input {
   color: white;
   font-weight: 600;
 }
+
+#sNumber, #password{
+  border-radius: 10px;
+}

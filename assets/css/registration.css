@@ -124,3 +124,17 @@ input[type="radio"] {
 .gender {
   display: flex;
 }
+
+#contactNumber,
+#email,
+#yrLevel,
+#program,
+#sNumber,
+#fName,
+#lName,
+#month,
+#day,
+#year,
+#gender {
+  border-radius: 5px;
+}

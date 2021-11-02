@@ -18,14 +18,14 @@
             <h3>SIGN UP</h3>
             <p style="text-align: center">It's quick and easy</p>
             <div class="container mt-3">
-                <form action="./configurations/database.php" method="POST">
+                <form action="./configurations/database.php" name="regForm" onsubmit="return checkEMail()" method="POST">
                     <div class="row">
                         <div class="col-md-6 col-12-mobile">
-                            <input type="text" id="fName" pattern="[A-Za-z ]+" name="firstName"
+                            <input type="text" id="fName" onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123) || (event.charCode==32)" name="firstName"
                                 placeholder="First Name" required>
                         </div>
                         <div class="col-md-6 col-12-mobile">
-                            <input type="text" id="lName" pattern="[A-Za-z ]+" name="lastName"
+                            <input type="text" id="lName" onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123) || (event.charCode==32)" name="lastName"
                                 placeholder="Last Name" required>
                         </div>
                     </div>

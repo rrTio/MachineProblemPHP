@@ -34,13 +34,13 @@
             <h3>Welcome!</h3>
             <p style="text-align: center">This is your profile and you may edit it</p>
             <div class="container mt-3">
-                <form name="landingForm" action="./configurations/database.php" method="POST">
+                <form name="landingForm" onsubmit="return checkEMail()" action="./configurations/database.php" method="POST">
                     <div class="row">
                         <div class="col-md-6 col-12-mobile">
-                            <input readonly="true" type="text" id="fName" pattern="[A-Za-z ]+" name="change_firstName" placeholder="First Name" value='<?php echo $firstName?>'>
+                            <input readonly="true" type="text" id="fName" onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123) || (event.charCode==32)" name="change_firstName" placeholder="First Name" value='<?php echo $firstName?>'>
                         </div>
                         <div class="col-md-6 col-12-mobile">
-                            <input readonly="true" type="text" id="lName" pattern="[A-Za-z ]+" name="change_lastName"
+                            <input readonly="true" type="text" id="lName" onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123) || (event.charCode==32)" name="change_lastName"
                                 placeholder="Last Name" value='<?php echo $lastName;?>'>
                         </div>
                     </div>
