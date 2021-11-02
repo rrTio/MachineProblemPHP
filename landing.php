@@ -1,18 +1,21 @@
-<?php
+<?php 
     include_once('./configurations/config.php');
-
-    if(isset($_POST['btnLogin']))
-    {
-        $studentNumber = $_POST['sNumber'];
-        $password = $_POST['password'];
-        $sql = mysqli_query($conn, "SELECT * FROM student_info WHERE user_studentNumber = '$studentNumber' AND user_password = '$password'");
-        $returned = mysqli_fetch_array($sql);
-    }
+    session_start();
+    $firstName = $_SESSION['firstName'];
+    $lastName = $_SESSION['lastName'];
+    $studentNumber = $_SESSION['studentNumber'];
+    $phoneNumber = $_SESSION['phoneNumber'];
+    $yearLevel = $_SESSION['yearLevel'];
+    $email = $_SESSION['email'];
+    $program = $_SESSION['program'];
+    $month = $_SESSION['month'];
+    $day = $_SESSION['day'];
+    $year = $_SESSION['year'];
+    $gender = $_SESSION['gender'];
 ?>
 
 <!DOCTYPE html>
 <html>
-
 <head>
     <title>Your Profile</title>
     <meta charset="utf-8" />
@@ -31,36 +34,13 @@
             <h3>Welcome!</h3>
             <p style="text-align: center">This is your profile and you may edit it</p>
             <div class="container mt-3">
-
-        <?php 
-            $query = "SELECT * FROM student_info WHERE user_studentNumber = '$studentNumber' AND user_password = '$password'";
-            $qValue = mysqli_query($conn, $query);
-            if(mysqli_num_rows($qValue) > 0)
-            {
-                while($qResult = mysqli_fetch_assoc($qValue))
-                {
-                    $firstName = $qResult['user_firstName'];
-                    $lastName = $qResult['user_lastName'];
-                    $studentNumber = $qResult['user_studentNumber'];
-                    $contactNumber = $qResult['user_contact'];
-                    $email = $qResult['user_email'];
-                    $yearLevel = $qResult['user_yearLevel'];
-                    $program = $qResult['user_program'];
-                    $month = $qResult['user_birthMonth'];
-                    $day = $qResult['user_birthDay'];
-                    $year = $qResult['user_birthYear'];
-                    $gender = $qResult['user_gender'];
-                }
-            }
-        ?>
                 <form name="landingForm" action="./configurations/database.php" method="POST">
                     <div class="row">
                         <div class="col-md-6 col-12-mobile">
-                            <input  type="text" id="fName" pattern="[A-Za-z ]+" name="change_firstName"
-                                placeholder="First Name" value='<?php echo $firstName;?>'>
+                            <input readonly="true" type="text" id="fName" pattern="[A-Za-z ]+" name="change_firstName" placeholder="First Name" value='<?php echo $firstName?>'>
                         </div>
                         <div class="col-md-6 col-12-mobile">
-                            <input  type="text" id="lName" pattern="[A-Za-z ]+" name="change_lastName"
+                            <input readonly="true" type="text" id="lName" pattern="[A-Za-z ]+" name="change_lastName"
                                 placeholder="Last Name" value='<?php echo $lastName;?>'>
                         </div>
                     </div>
@@ -70,7 +50,8 @@
                                 id="sNumber" name="sendStudentNumber" placeholder="Student Number">
                         </div>
                         <div class="col-md-6 col-12-mobile">
-                            <input type="number" pattern="/^-?\d+\.?\d*$/" class="contactNumber" onKeyPress="if(this.value.length==11) return false;" id="contactNumber" name="change_contactNumber" placeholder="Contact Number" value='<?php echo $contactNumber;?>'>
+                            <input type="number" pattern="/^-?\d+\.?\d*$/" class="contactNumber" onKeyPress="if(this.value.length==11) return false;" 
+                            id="contactNumber" name="change_contactNumber" placeholder="Contact Number" value='<?php echo $phoneNumber;?>'>
                         </div>
                     </div>
                     <div class="row">

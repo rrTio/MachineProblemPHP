@@ -15,6 +15,10 @@
         $year = $_POST['year'];
         $gender = $_POST['gender'];
         
+        if(!in_array('ue.edu.ph', explode('@', trim($_POST["email"])))) {
+        echo "<script>alert('WRONG EMAIL DOMAIN. SHOULD BE @UE.EDU.PH');</script>";
+        }
+
         if($password == ""){
             $surname = strtolower($lastName);
             $newPassword = $month.$day.$year.$surname;
@@ -53,9 +57,45 @@
     if(isset($_POST['btnCPass'])){
         $userNumber = $_POST['fp_sNumber'];
         $userPass = $_POST['fp_password'];
-
         $changePass = "UPDATE student_info SET user_password = '$userPass' WHERE user_studentNumber = '$userNumber'";
         mysqli_query($conn, $changePass);
         header("Location: ../index.php");
     }
+
+    if(isset($_POST['btnLogin'])){
+    $studentNumber = $_POST['sNumber'];
+    $password = $_POST['password'];
+    $lquery = "SELECT * FROM student_info WHERE user_studentNumber = '$studentNumber' AND user_password = '$password'";
+    $login = mysqli_query($conn, $lquery);
+    if(mysqli_num_rows($login) == 1){
+        while($qResult = mysqli_fetch_assoc($login))
+            {
+                $firstName = $qResult['user_firstName'];
+                $lastName = $qResult['user_lastName'];
+                $studentNumber = $qResult['user_studentNumber'];
+                $yearLevel = $qResult['user_yearLevel'];
+                $email = $qResult['user_email'];
+                $program = $qResult['user_program'];
+                $phoneNumber = $qResult['user_contact'];
+                $month = $qResult['user_birthMonth'];
+                $day = $qResult['user_birthDay'];
+                $year = $qResult['user_birthYear'];
+                $gender = $qResult['user_gender'];
+            }
+        session_start();
+        $_SESSION['firstName'] = $firstName;
+        $_SESSION['lastName'] = $lastName;
+        $_SESSION['studentNumber'] = $studentNumber;
+        $_SESSION['phoneNumber'] = $phoneNumber;
+        $_SESSION['email'] = $email;
+        $_SESSION['yearLevel'] = $yearLevel;
+        $_SESSION['program'] = $program;
+        $_SESSION['month'] = $month;
+        $_SESSION['day'] = $day;
+        $_SESSION['year'] = $year;
+        $_SESSION['gender'] = $gender;
+
+    header("Location: ../landing.php");}
+    else {header('Location: ../index.php');}
+}
 ?>

@@ -62,7 +62,7 @@ input[type="radio"] {
   touch-action: none;
 }
 
-#gender, #sNumber{
+#gender, #sNumber, #fName, #lName{
   color:#808080;
   pointer-events: none;
   touch-action: none;
@@ -169,11 +169,6 @@ input[type="radio"] {
 .birthdate,
 .gender {
   display: flex;
-}
-
-#lName, #contactNumber, #program, #gender{
-  text-align: right;
-  padding-right: 10px;
 }
 
 #email{

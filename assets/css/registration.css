@@ -125,11 +125,6 @@ input[type="radio"] {
   display: flex;
 }
 
-#lName, #contactNumber, #program, #gender{
-  text-align: right;
-  padding-right: 10px;
-}
-
 #email{
   text-align: center;
 }

@@ -8,7 +8,6 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
-    
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="assets/css/main.css" />
@@ -22,7 +21,7 @@
         <div class=" container">
             <h4>Welcome!</h4>
             <p>Please enter your details</p>
-            <form onSubmit="return checkValidation()" action="landing.php" method="POST" name="loginForm">
+            <form onSubmit="return checkValidation()" action="./configurations/database.php" method="POST" name="loginForm">
                 <div class="row">
                     <div class="col-md-12 col-12-mobile">
                         <input pattern="\d*" maxlength="11" id="sNumber" name="sNumber" placeholder="Student Number">
