@@ -7,23 +7,16 @@
         $studentNumber = $_POST['sNumber'];
         $yrLevel = $_POST['yrLevel'];
         $email = $_POST['email'];
-        $password = $_POST['password'];
         $program = $_POST['program'];
         $contactNumber = $_POST['contactNumber'];
         $month = $_POST['month'];
         $day = $_POST['day'];
         $year = $_POST['year'];
         $gender = $_POST['gender'];
-        
-        if(!in_array('ue.edu.ph', explode('@', trim($_POST["email"])))) {
-        echo "<script>alert('WRONG EMAIL DOMAIN. SHOULD BE @UE.EDU.PH');</script>";
-        }
 
-        if($password == ""){
-            $surname = strtolower($lastName);
-            $newPassword = $month.$day.$year.$surname;
-            $password = $newPassword;
-        }
+        $surname = strtolower($lastName);
+        $newPassword = $month.$day.$year.$surname;
+        $password = $newPassword;
         
         $sql = "INSERT INTO student_info (user_firstName, user_lastName, user_studentNumber, user_yearLevel, user_email, user_password, user_program, 
         user_contact, user_birthMonth, user_birthDay, user_birthYear, user_gender) 
@@ -80,6 +73,7 @@
                 $year = $qResult['user_birthYear'];
                 $gender = $qResult['user_gender'];
             }
+            
         session_start();
         $_SESSION['firstName'] = $firstName;
         $_SESSION['lastName'] = $lastName;

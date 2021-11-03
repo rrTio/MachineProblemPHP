@@ -21,22 +21,18 @@
                 <form action="./configurations/database.php" name="regForm" onsubmit="return checkEMail()" method="POST">
                     <div class="row">
                         <div class="col-md-6 col-12-mobile">
-                            <input type="text" id="fName" onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123) || (event.charCode==32)" name="firstName"
-                                placeholder="First Name" required>
+                            <input type="text" id="fName" onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123) || (event.charCode==32)" name="firstName" placeholder="First Name" required>
                         </div>
                         <div class="col-md-6 col-12-mobile">
-                            <input type="text" id="lName" onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123) || (event.charCode==32)" name="lastName"
-                                placeholder="Last Name" required>
+                            <input type="text" id="lName" onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123) || (event.charCode==32)" name="lastName" placeholder="Last Name" required>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-6 col-12-mobile">
-                            <input type="number" pattern="/^-?\d+\.?\d*$/" class="contactNumber" onKeyPress="if(this.value.length==11) return false;" id="sNumber" name="sNumber"
-                                placeholder="Student Number" required>
+                            <input type="number" pattern="/^-?\d+\.?\d*$/" class="contactNumber" onKeyPress="if(this.value.length==11) return false;" id="sNumber" name="sNumber" placeholder="Student Number" required>
                         </div>
                         <div class="col-md-6 col-12-mobile">
-                            <input type="number" pattern="/^-?\d+\.?\d*$/" class="contactNumber" onKeyPress="if(this.value.length==11) return false;" id="contactNumber"
-                                name="contactNumber" placeholder="Contact Number" required>
+                            <input type="number" pattern="/^-?\d+\.?\d*$/" class="contactNumber" onKeyPress="if(this.value.length==11) return false;" id="contactNumber" name="contactNumber" placeholder="Contact Number" required>
                         </div>
                     </div>
                     <div class="row">

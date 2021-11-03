@@ -31,7 +31,7 @@
 <body>
     <div class="containerCard">
         <div class="card">
-            <h3>Welcome!</h3>
+            <h3>Welcome <?php echo $firstName?>!</h3>
             <p style="text-align: center">This is your profile and you may edit it</p>
             <div class="container mt-3">
                 <form name="landingForm" onsubmit="return checkEMail()" action="./configurations/database.php" method="POST">
