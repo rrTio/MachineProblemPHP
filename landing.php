@@ -51,7 +51,7 @@
                         </div>
                         <div class="col-md-6 col-12-mobile">
                             <input type="number" pattern="/^-?\d+\.?\d*$/" class="contactNumber" onKeyPress="if(this.value.length==11) return false;" 
-                            id="contactNumber" name="change_contactNumber" placeholder="Contact Number" value='<?php echo $phoneNumber;?>'>
+                                id="contactNumber" name="change_contactNumber" placeholder="Contact Number" value='<?php echo $phoneNumber;?>'>
                         </div>
                     </div>
                     <div class="row">
@@ -86,7 +86,7 @@
                     <div class="row align-items-center g-3">
                         <div class="birthdate col-lg-6 col-12-mobile">
                             <h4 id="birthdate">Birthdate: &nbsp;</h4>
-                            <select id="month" name="month">
+                            <select id="month" name="month" readonly="true">
                                 <option selected disabled>MONTH</option>
                                 <option value="01" <?php echo ($month=='01')?('selected'):(''); ?>>January</option>
                                 <option value="02" <?php echo ($month=='02')?('selected'):(''); ?>>February</option>
@@ -172,7 +172,7 @@
                             </select>
                         </div>
                     </div>
-                    
+
                     <center>
                         <div class="row">
                             <div class="col-md-6 col-12-mobile buttonRegister">
@@ -188,5 +188,4 @@
         </div>
     </div>
 </body>
-
 </html>

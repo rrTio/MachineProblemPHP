@@ -15,7 +15,7 @@ function checkValidation() {
 function forgotPassword() { 
   var password = document.forms["formFPass"]["fp_password"];
   var cPassword = document.forms["formFPass"]["fp_confirmPassword"];
-  if (password != cPassword) { 
+  if (password.value != cPassword.value) { 
     window.alert("PASSWORD MISMATCH");
     return false;
   }
@@ -34,12 +34,23 @@ function openFPassword() {
   window.location.href = "./forgotpassword.php";
 }
 
-function checkEMail() { 
-  var regEmail = document.forms['regForm']['email'];
-  var landEmail = document.forms['landingForm']['change_email'];
-  if (!/@ue.edu.ph\s*$/.test(regEmail) || !/@ue.edu.ph\s*$/.test(landEmail)) {
-    window.alert("EMAIL DOMAIN SHOULD BE '@UE.EDU.PH'!");
+function checkEmail() {
+  var email = document.forms["regForm"]["email"];
+  var parts = email.value.split("@");
+
+  if (email.value == "") {
+    window.alert("Please enter your e-mail.");
+    return false;
+  } else if (parts.length === 2) {
+    console.log(parts[1]);
+    if (parts[1] === "ue.edu.ph") {
+      return true;
+    } else {
+      window.alert("Invalid domain. (use @ue.edu.ph)");
+      return false;
+    }
+  } else {
+    window.alert("E-mail error.");
     return false;
   }
-  return true
 }

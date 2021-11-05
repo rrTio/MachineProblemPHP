@@ -15,7 +15,7 @@
         $gender = $_POST['gender'];
 
         $surname = strtolower($lastName);
-        $newPassword = $month.$day.$year.$surname;
+        $newPassword = $surname.$month.$day.$year;
         $password = $newPassword;
         
         $sql = "INSERT INTO student_info (user_firstName, user_lastName, user_studentNumber, user_yearLevel, user_email, user_password, user_program, 
@@ -88,6 +88,10 @@
         $_SESSION['gender'] = $gender;
 
     header("Location: ../landing.php");}
-    else {header('Location: ../index.php');}
+    else {
+        session_start();
+        $_SESSION['error'] = "TRUE";
+        //VALUE
+    }
 }
 ?>

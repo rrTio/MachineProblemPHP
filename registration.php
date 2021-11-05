@@ -10,6 +10,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="assets/css/main.css" />
     <link rel="stylesheet" href="assets/css/registration.css" />
+    <script src="./assets/js/validation.js"></script>
 </head>
 
 <body>
@@ -18,7 +19,7 @@
             <h3>SIGN UP</h3>
             <p style="text-align: center">It's quick and easy</p>
             <div class="container mt-3">
-                <form action="./configurations/database.php" name="regForm" onsubmit="return checkEMail()" method="POST">
+                <form  name="regForm" action="./configurations/database.php" onsubmit="return checkEmail()" method="POST">
                     <div class="row">
                         <div class="col-md-6 col-12-mobile">
                             <input type="text" id="fName" onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123) || (event.charCode==32)" name="firstName" placeholder="First Name" required>
@@ -155,7 +156,7 @@
                         </div>
                     </div>
                     <center>
-                        <div class=" col-md-6 col-12-mobile buttonRegister">
+                        <div class="col-12-mobile buttonRegister">
                             <button type="submit" name="register" class=" custom-btn btn-10">Register</button>
                         </div>
                     </center>

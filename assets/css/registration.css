@@ -118,6 +118,7 @@ input[type="radio"] {
 
 .buttonRegister {
   margin-top: 4%;
+  width: 60%;
 }
 
 .birthdate,
